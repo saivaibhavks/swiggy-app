@@ -5,7 +5,7 @@ const Header = () => {
     <div className="header">
       <div className="logo-div">
         <img
-          src="https://static.vecteezy.com/system/resources/previews/042/642/799/non_2x/hand-drawn-empanada-logo-template-suitable-for-restaurant-and-cafe-vector.jpg"
+          src="https://media.istockphoto.com/id/1197390071/vector/food-delivery-by-motorcycle-with-five-stars-vector-icon-online-food-delivery-by-motorcycle.jpg?s=612x612&w=0&k=20&c=N4FWDRHEIudr5UIFtnh0SQ8jqVoYyv9PX6rEePItL5Y="
           alt="image"
           className="logo-img"
         />
