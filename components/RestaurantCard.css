@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  max-width: 300px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  border-radius: 59px 59px 59px 59px;
+  -webkit-border-radius: 59px 59px 59px 59px;
+  -moz-border-radius: 59px 59px 59px 59px;
+}
+
+.data {
+  display: flex;
+  gap: 12px;
+}
+
+.content {
+  margin: 8px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.name {
+  font-size: 24px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.cuisine {
+  word-break: break-all;
+}
