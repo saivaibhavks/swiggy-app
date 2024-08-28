@@ -11,8 +11,8 @@ const RestaurantCard = ({ data }) => {
       <div className="content">
         <div className="name">{data.name}</div>
         <div className="data">
-          <div className="rating">{data.avgRating}</div>
-          <div className="time">{data.sla.deliveryTime}</div>
+          <div className="rating">{data.avgRating} ⭐</div>
+          <div className="time">{data.sla.slaString}⌚</div>
         </div>
         <div className="cuisine">{data.cuisines.join(",")}</div>
       </div>
