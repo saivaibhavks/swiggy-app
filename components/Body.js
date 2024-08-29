@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Body.css";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import Filter from "./Filter";
 
 const Body = () => {
   const [restaurantData, setRestaurantData] = useState([]);
@@ -31,14 +32,21 @@ const Body = () => {
     fetchProducts();
   }, []);
 
-  return restaurantData.length === 0 ? (
-    <Shimmer />
+  return;
+  restaurantData.length === 0 ? (
+    <>
+      <Filter />
+      <Shimmer />
+    </>
   ) : (
-    <div className="container">
-      {restaurantData.map((item) => {
-        return <RestaurantCard data={item.info} />;
-      })}
-    </div>
+    <>
+      <Filter />
+      <div className="container">
+        {restaurantData.map((item) => {
+          return <RestaurantCard data={item.info} />;
+        })}
+      </div>
+    </>
   );
 };
 

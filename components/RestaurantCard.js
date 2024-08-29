@@ -5,7 +5,7 @@ const RestaurantCard = ({ data }) => {
   const imgId = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${data.cloudinaryImageId}`;
   return (
     <div className="card">
-      <div className="img">
+      <div>
         <img src={imgId} alt="rest-img" />
       </div>
       <div className="content">
