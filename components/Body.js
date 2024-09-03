@@ -32,15 +32,20 @@ const Body = () => {
     fetchProducts();
   }, []);
 
-  return;
-  restaurantData.length === 0 ? (
-    <>
-      <Filter />
+  return restaurantData.length === 0 ? (
+    <div className="container">
       <Shimmer />
-    </>
+      <Shimmer />
+      <Shimmer />
+      <Shimmer />
+      <Shimmer />
+      <Shimmer />
+      <Shimmer />
+      <Shimmer />
+    </div>
   ) : (
     <>
-      <Filter />
+      <Filter setRestaurantData={setRestaurantData} />
       <div className="container">
         {restaurantData.map((item) => {
           return <RestaurantCard data={item.info} />;

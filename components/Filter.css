@@ -1,0 +1,14 @@
+.filter-container {
+  display: flex;
+  margin-left: 40px;
+  gap: 50px;
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid black;
+  font-size: 20px;
+  cursor: pointer;
+}

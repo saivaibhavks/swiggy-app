@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
-  max-width: 300px;
-  background-color: gray;
+  width: 250px;
+  background-color: rgb(185, 181, 181);
+  height: 250px;
+  border-radius: 59px 59px 59px 59px;
 }
