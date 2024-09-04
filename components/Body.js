@@ -45,7 +45,10 @@ const Body = () => {
     </div>
   ) : (
     <>
-      <Filter setRestaurantData={setRestaurantData} />
+      <Filter
+        restaurantData={restaurantData}
+        setRestaurantData={setRestaurantData}
+      />
       <div className="container">
         {restaurantData.map((item) => {
           return <RestaurantCard data={item.info} />;
