@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./Filter.css";
+import Search from "./Search";
 
 const Filter = ({ restaurantData, setRestaurantData }) => {
   const [filteredData, setFilteredData] = useState(restaurantData);
+  const [selected, setSelected] = useState("");
 
   const filterFunc = (type) => {
     let data;
@@ -38,10 +40,20 @@ const Filter = ({ restaurantData, setRestaurantData }) => {
 
   return (
     <div className="filter-container">
-      <button>Filter</button>
+      <button
+        style={{
+          cursor: "auto",
+        }}
+      >
+        Filters
+      </button>
       <button
         onClick={() => {
           filterFunc("top-rated");
+          setSelected("top-rated");
+        }}
+        style={{
+          backgroundColor: selected === "top-rated" ? "#BFD2C8" : "",
         }}
       >
         Top Rated
@@ -49,6 +61,10 @@ const Filter = ({ restaurantData, setRestaurantData }) => {
       <button
         onClick={() => {
           filterFunc("less-than-30");
+          setSelected("less-than-30");
+        }}
+        style={{
+          backgroundColor: selected === "less-than-30" ? "#BFD2C8" : "",
         }}
       >
         Less than 30 mins
@@ -56,6 +72,10 @@ const Filter = ({ restaurantData, setRestaurantData }) => {
       <button
         onClick={() => {
           filterFunc("300-600");
+          setSelected("300-600");
+        }}
+        style={{
+          backgroundColor: selected === "300-600" ? "#BFD2C8" : "",
         }}
       >
         Rs 300 - Rs 600
@@ -63,6 +83,10 @@ const Filter = ({ restaurantData, setRestaurantData }) => {
       <button
         onClick={() => {
           filterFunc("less-than-300");
+          setSelected("less-than-300");
+        }}
+        style={{
+          backgroundColor: selected === "less-than-300" ? "#BFD2C8" : "",
         }}
       >
         Less than Rs 300
@@ -70,6 +94,10 @@ const Filter = ({ restaurantData, setRestaurantData }) => {
       <button
         onClick={() => {
           setRestaurantData(filteredData);
+          setSelected("clear-filter");
+        }}
+        style={{
+          backgroundColor: selected === "clear-filter" ? "#BFD2C8" : "",
         }}
       >
         Clear Filters

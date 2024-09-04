@@ -3,6 +3,7 @@ import "./Body.css";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import Filter from "./Filter";
+import Search from "./Search";
 
 const Body = () => {
   const [restaurantData, setRestaurantData] = useState([]);
@@ -45,6 +46,10 @@ const Body = () => {
     </div>
   ) : (
     <>
+      <Search
+        restaurantData={restaurantData}
+        setRestaurantData={setRestaurantData}
+      />
       <Filter
         restaurantData={restaurantData}
         setRestaurantData={setRestaurantData}
