@@ -7,6 +7,7 @@ import Search from "./Search";
 
 const Body = () => {
   const [restaurantData, setRestaurantData] = useState([]);
+  const [inputSearch, setInputSearch] = useState("");
 
   const fetchProducts = async () => {
     try {
@@ -46,18 +47,19 @@ const Body = () => {
     </div>
   ) : (
     <>
-      <Search
-        restaurantData={restaurantData}
-        setRestaurantData={setRestaurantData}
-      />
+      <Search inputSearch={inputSearch} setInputSearch={setInputSearch} />
       <Filter
         restaurantData={restaurantData}
         setRestaurantData={setRestaurantData}
       />
       <div className="container">
-        {restaurantData.map((item) => {
-          return <RestaurantCard data={item.info} />;
-        })}
+        {restaurantData
+          .filter((rest) => {
+            return rest.info.name.toLowerCase().includes(inputSearch);
+          })
+          .map((item) => {
+            return <RestaurantCard data={item.info} />;
+          })}
       </div>
     </>
   );
