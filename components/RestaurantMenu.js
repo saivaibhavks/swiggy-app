@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./RestaurantMenu.css";
 import { useParams } from "react-router-dom";
+import Shimmer from "/components/Shimmer";
 
 export const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -24,21 +25,26 @@ export const RestaurantMenu = () => {
   };
 
   if (menuData === null) {
-    return <h1>Rendering....</h1>;
+    return (
+      <div style={{ alignItems: "center" }}>
+        <Shimmer />;
+      </div>
+    );
   } else {
     console.log("menu dat", menuData);
     const { name, avgRating, costForTwoMessage, locality, cuisines } = menuData;
     const imgId = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${menuData.cloudinaryImageId}`;
+
     return (
-      <div className="menu-card">
+      <div className="rest-menu">
         <div>
           <img src={imgId} alt="rest-img" />
         </div>
-        <h1>{name}</h1>
-        <span>{avgRating}</span>
-        <span>{costForTwoMessage}</span>
-        <span>{locality}</span>
-        <span>{cuisines.join(",")}</span>
+        <div>{name}</div>
+        <div>{avgRating}</div>
+        <div>{costForTwoMessage}</div>
+        <div>{locality}</div>
+        <div>{cuisines.join("")}</div>
       </div>
     );
   }
