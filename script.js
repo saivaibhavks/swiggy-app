@@ -15,7 +15,7 @@ const appRoute = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <Body /> },
+      { path: "/", element: <Body />, errorElement: <Error /> },
       { path: "/about", element: <AboutUs str={"hello"} /> },
       { path: "/contact", element: <Contact /> },
       { path: "/restaurant/:resId", element: <RestaurantMenu /> },
